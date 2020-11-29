@@ -1,0 +1,23 @@
+{% extends "bootstrap/base.html" %}
+
+{% block title %}Show Stamps{% endblock %}
+
+{% block content %}
+<div class="container">
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        {{ form.gebiet.label }} {{ form.gebiet() }}
+        {{ form.submit() }}
+    </form>
+    {% for marke in marken %}
+    <ul>
+        <li>
+            {{ marke }}
+        </li>
+    </ul>
+
+    {% endfor %}
+</div>
+
+
+{% endblock %}
