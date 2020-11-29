@@ -6,14 +6,26 @@
 {% block content %}
 <div class="container">
     {{ wtf.quick_form(form) }}
-    {% for marke in marken %}
-    <ul>
-        <li>
-            {{ marke }}
-        </li>
-    </ul>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">MichNr</th>
+                <th scope="col">Entwertung</th>
+                <th scope="col">Anzahl</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for marke in marken %}
+            <tr>
+                <td>{{ marke['MichNr'] }}</td>
+                <td>{{ marke['Entwertung'] }}</td>
+                <td>{{ marke['Anzahl'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
-    {% endfor %}
 </div>
 
 
